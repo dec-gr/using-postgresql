@@ -7,15 +7,14 @@ const database = process.env.DATABASE;
 const password = process.env.PASSWORD;
 const port = process.env.DBPORT;
 
-module.exports = new Pool({
-  host: host,
-  user: user,
-  database: database,
-  password: password,
-  port: port,
-});
-
 // module.exports = new Pool({
-//   connectionString:
-//     'postgresql://declangrant:<Password123>@localhost:5432/top_users',
+//   host: host,
+//   user: user,
+//   database: database,
+//   password: password,
+//   port: port,
 // });
+
+module.exports = new Pool({
+  connectionString: process.env.CONNECTION_STRING,
+});
